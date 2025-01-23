@@ -11,4 +11,5 @@
 	<li>Clone or <a href="https://github.com/agragregra/ts/archive/master.zip">Download</a> <strong>Tailwind Starter</strong> from GitHub</li>
 	<li>Install Node Modules: <strong>npm i</strong></li>
 	<li>Run: <strong>npm run dev</strong></li>
+	<li>Open <strong>Live Server</strong></li>
 </ol>
