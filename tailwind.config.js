@@ -1,1 +1,0 @@
-/* While Tailwind CSS IntelliSense is being updated */
