@@ -9,6 +9,6 @@
 	"author": "WebDesign Master",
 	"license": "ISC",
 	"devDependencies": {
-		"@tailwindcss/cli": "^4.0.0"
+		"@tailwindcss/cli": "^4.0.1"
 	}
 }
