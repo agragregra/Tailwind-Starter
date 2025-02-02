@@ -1,11 +1,24 @@
-const switchButtons = document.querySelectorAll('[data-mode]')
-const setTheme = (mode) => {
-	localStorage.theme = mode
-	const systemTheme = matchMedia('(prefers-color-scheme: dark)')
-	const applyTheme = () => document.documentElement.className = mode === 'auto' ? (systemTheme.matches ? 'dark' : 'light') : mode
-	systemTheme.onchange = mode === 'auto' ? applyTheme : null
-	switchButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.mode === mode))
-	applyTheme()
+const html = document.documentElement, mode = localStorage.getItem('mode') || 'auto'
+
+const getPreferredMode = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+
+const switchMode = mode => {
+
+	const newMode = mode === 'auto' ? getPreferredMode() : mode
+	html.style.colorScheme = mode === 'auto' ? 'light dark' : newMode
+
+	html.classList.remove('light', 'dark')
+	html.classList.add(`${newMode}`)
+	localStorage.setItem('mode', mode)
+
+	document.querySelectorAll('[data-mode]').forEach(el => el.classList.toggle('active', el.dataset.mode === mode))
+
 }
-document.addEventListener('click', ({ target }) => target.closest('[data-mode]')?.dataset.mode && setTheme(target.closest('[data-mode]').dataset.mode))
-setTheme(localStorage.theme || 'auto')
+
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+	if (localStorage.getItem('mode') === 'auto') switchMode('auto')
+})
+
+document.addEventListener('click', e => e.target.dataset.mode && switchMode(e.target.dataset.mode))
+
+switchMode(mode)
