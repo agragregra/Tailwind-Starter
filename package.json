@@ -1,15 +1,15 @@
 {
-	"name": "tailwind-starter",
-	"version": "1.0.0",
-	"description": "Startup Tailwind Template",
-	"main": "index.js",
-	"scripts": {
-		"dev": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify --watch",
-		"build": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify"
-	},
-	"author": "WebDesign Master",
-	"license": "ISC",
-	"devDependencies": {
-		"@tailwindcss/cli": "^4.0.4"
-	}
+  "name": "tailwind-starter",
+  "version": "1.0.0",
+  "description": "Startup Tailwind Template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify"
+  },
+  "author": "WebDesign Master",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.4"
+  }
 }
