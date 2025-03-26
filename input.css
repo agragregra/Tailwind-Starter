@@ -5,10 +5,6 @@
   --color-accent: orange;
 }
 
-body {
-  @apply dark:bg-gray-900 dark:text-white;
-}
-
 [data-mode].active {
   @apply bg-accent text-amber-50;
 }
