@@ -1,7 +1,20 @@
-// LIBRARIES IMPORT SECTION
+const html = document.documentElement, mode = localStorage.getItem('mode') || 'auto'
 
-import '../libs/light-dark/light-dark.js'
+const getPreferredMode = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 
-// USER SCRIPTS
+const switchMode = mode => {
+  const newMode = mode === 'auto' ? getPreferredMode() : mode
+  html.style.colorScheme = mode === 'auto' ? 'light dark' : newMode
+  html.classList.remove('light', 'dark')
+  html.classList.add(`${newMode}`)
+  localStorage.setItem('mode', mode)
+  document.querySelectorAll('[data-mode]').forEach(el => el.classList.toggle('active', el.dataset.mode === mode))
+}
 
-// document.body.hidden = true // test
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if (localStorage.getItem('mode') === 'auto') switchMode('auto')
+})
+
+document.addEventListener('click', e => e.target.dataset.mode && switchMode(e.target.dataset.mode))
+
+switchMode(mode)

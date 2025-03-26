@@ -4,8 +4,8 @@
   "description": "Startup Tailwind Template",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify --watch",
-    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.min.css --minify"
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/main.css --minify --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/main.css --minify"
   },
   "author": "WebDesign Master",
   "license": "ISC",
