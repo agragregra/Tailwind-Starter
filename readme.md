@@ -5,10 +5,10 @@
 
 <p>Clone into the current folder with remove all unnecessary (one command):</p>
 
-<pre>git clone https://github.com/webdesign-masteru/ts .; rm -rf trunk .gitignore readme.md .git</pre>
+<pre>git clone https://github.com/webdesign-masteru/tailwind-starter .; rm -rf trunk .gitignore readme.md .git</pre>
 
 <ol>
-  <li>Clone or <a href="https://github.com/webdesign-masteru/ts/archive/master.zip">Download</a> <strong>Tailwind Starter</strong> from GitHub</li>
+  <li>Clone or <a href="https://github.com/webdesign-masteru/tailwind-starter/archive/master.zip">Download</a> <strong>Tailwind Starter</strong> from GitHub</li>
   <li>Install Node Modules: <strong>npm i</strong></li>
   <li>Run: <strong>npm run dev</strong></li>
   <li>Build: <strong>npm run build</strong></li>
